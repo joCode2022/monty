@@ -1,13 +1,11 @@
 #include "monty.h"
 #include "lists.h"
-
 /**
  * insert_dnodeint_at_index - inserts a node at a given index
  * in a doubly linked list
  * @h: double pointer to the list
  * @idx: index of the node to insert
  * @n: data to insert
- *
  * Return: address of the new node, or NULL if it failed
  */
 
