@@ -1,18 +1,17 @@
 #include "monty.h"
 #include "lists.h"
-
 /**
  * rotl_handler - handles the rotl instruction
  * @stack: double pointer to the stack to push to
- * @line_number: number of the line in the file
+ * @line_num: number of the line in the file
  */
 
-void rotl_handler(stack_t **stack, unsigned int line_number)
+void rotl_handler(stack_t **stack, unsigned int line_num)
 {
 	stack_t *temp = *stack;
 	int num  = 0;
 
-	(void)line_number;
+	(void)line_num;
 
 	if (*stack == NULL)
 		return;
@@ -25,15 +24,15 @@ void rotl_handler(stack_t **stack, unsigned int line_number)
 /**
  * rotr_handler - handles the rotr instruction
  * @stack: double pointer to the stack to push to
- * @line_number: number of the line in the file
+ * @line_num: number of the line in the file
  */
 
-void rotr_handler(stack_t **stack, unsigned int line_number)
+void rotr_handler(stack_t **stack, unsigned int line_num)
 {
 	stack_t *temp = *stack;
 	int num = 0, len = dlistint_len(*stack);
 
-	(void)line_number;
+	(void)line_num;
 
 	if (*stack == NULL)
 		return;
@@ -46,25 +45,25 @@ void rotr_handler(stack_t **stack, unsigned int line_number)
 /**
  * stack_handler - handles the stack instruction
  * @stack: double pointer to the stack to push to
- * @line_number: number of the line in the file
+ * @line_num: number of the line in the file
  */
 
-void stack_handler(stack_t **stack, unsigned int line_number)
+void stack_handler(stack_t **stack, unsigned int line_num)
 {
 	(void)stack;
-	(void)line_number;
+	(void)line_num;
 	data.qflag = 0;
 }
 
 /**
  * queue_handler - handles the queue instruction
  * @stack: double pointer to the stack to push to
- * @line_number: number of the line in the file
+ * @line_num: number of the line in the file
  */
 
-void queue_handler(stack_t **stack, unsigned int line_number)
+void queue_handler(stack_t **stack, unsigned int line_num)
 {
 	(void)stack;
-	(void)line_number;
+	(void)line_num;
 	data.qflag = 1;
 }
