@@ -1,6 +1,5 @@
 #include "monty.h"
 #include "lists.h"
-
 /**
  * free_all - custom memory handling function
  * @all: flag to indicate what to free
