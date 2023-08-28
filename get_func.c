@@ -1,6 +1,5 @@
 #include "monty.h"
 #include "lists.h"
-
 /**
  * get_func - selects the right function
  * @parsed: line from the bytecode file passed to main
@@ -45,16 +44,16 @@ void (*get_func(char **parsed))(stack_t **, unsigned int)
 /**
  * push_handler - handles the push instruction
  * @stack: double pointer to the stack to push to
- * @line_number: number of the line in the file
+ * @line_num: number of the line in the file
  */
-void push_handler(stack_t **stack, unsigned int line_number)
+void push_handler(stack_t **stack, unsigned int line_num)
 {
 	stack_t *new;
 	int num = 0, i;
 
 	if (data.words[1] == NULL)
 	{
-		dprintf(STDERR_FILENO, PUSH_FAIL, line_number);
+		dprintf(STDERR_FILENO, PUSH_FAIL, line_num);
 		free_all(1);
 		exit(EXIT_FAILURE);
 	}
@@ -63,7 +62,7 @@ void push_handler(stack_t **stack, unsigned int line_number)
 	{
 		if (isalpha(data.words[1][i]) != 0)
 		{
-			dprintf(STDERR_FILENO, PUSH_FAIL, line_number);
+			dprintf(STDERR_FILENO, PUSH_FAIL, line_num);
 			free_all(1);
 			exit(EXIT_FAILURE);
 		}
@@ -85,11 +84,11 @@ void push_handler(stack_t **stack, unsigned int line_number)
 /**
  * pall_handler - handles the pall instruction
  * @stack: double pointer to the stack to push to
- * @line_number: number of the line in the file
+ * @line_num: number of the line in the file
  */
-void pall_handler(stack_t **stack, unsigned int line_number)
+void pall_handler(stack_t **stack, unsigned int line_num)
 {
-	(void)line_number;
+	(void)line_num;
 	if (*stack)
 		print_dlistint(*stack);
 }
